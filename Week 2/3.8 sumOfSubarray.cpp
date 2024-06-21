@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Time Complexity: O(n^2)
+
 void addSubArray(int arr[], int n);
 
 int main()
