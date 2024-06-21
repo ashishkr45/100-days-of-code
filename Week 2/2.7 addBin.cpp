@@ -8,7 +8,7 @@ int main()
 {
 
     int a, b;
-    cout << "Enter two binary numbers for Addition.";
+    cout << "Enter two binary numbers for Addition." << endl;
     cout << "1st number: ";
     cin >> a;
 
@@ -25,27 +25,26 @@ int addBinary(int a, int b)
     int ans = 0;
     int carry = 0;
 
-    while (a > 0 && b >> 0)
+    while (a > 0 && b > 0)
     {
         if (a % 2 == 0 && b % 2 == 0)
         {
             ans = ans * 10 + carry;
             carry = 0;
         }
-        else if (a % 2 == 0 && b % 2 == 1)
-            || (a % 2 == 1 && b % 2 == 0)
+        else if ((a % 2 == 0 && b % 2 == 1) || (a % 2 == 1 && b % 2 == 0))
+        {
+            if (carry == 1)
             {
-                if (carry == 1)
-                {
-                    ans = ans * 10 + 0;
-                    carry = 1;
-                }
-                else
-                {
-                    ans = ans * 10 + 1;
-                    carry 0;
-                }
+                ans = ans * 10 + 0;
+                carry = 1;
             }
+            else
+            {
+                ans = ans * 10 + 1;
+                carry = 0;
+            }
+        }
         else
         {
             ans = ans * 10 + carry;
