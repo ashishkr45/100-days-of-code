@@ -1,7 +1,11 @@
+// Smallest Missing Postive Number.
+
 /*
+
 Problem:
 You are given an array arr[] of N integers including O. The task is to find the smallest
 positive number missing from the array.
+
 */
 
 #include <iostream>
@@ -50,6 +54,5 @@ int main()
     }
 
     cout << "Smallest missing +vs no: " << ans << endl;
-
     return 0;
 }

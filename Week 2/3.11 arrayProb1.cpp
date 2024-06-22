@@ -18,7 +18,6 @@ int main()
     cin >> s;
 
     int a[n];
-
     cout << "Enter array enement with spaces" << endl;
     for (int i = 0; i < n; i++)
     {
@@ -26,7 +25,6 @@ int main()
     }
 
     int i = 0, j = 0, st = -1, en = -1, sum = 0;
-
     while (j < n && sum + a[j] <= s)
     {
         sum += a[j];
@@ -58,6 +56,5 @@ int main()
     }
 
     cout << st << " " << en << endl;
-
     return 0;
 }

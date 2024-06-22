@@ -28,7 +28,8 @@ int main()
         cin >> a[i];
     }
 
-    const int N = 1e6 + 2; // we put const cuz nothing will be able to change it.
+    const int N = 1e6 + 2;
+    // we put const cuz nothing will be able to change it.
     int idx[n];
 
     for (int i = 0; i < N; i++)

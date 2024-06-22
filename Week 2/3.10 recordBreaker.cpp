@@ -1,6 +1,7 @@
 /*
 Question:
-cyana is given the number of visitors at her local theme park on N consecutive days. The number of visitors on the i-th day is Vi A day is record breaking if it satisfies both conditions:
+cyana is given the number of visitors at her local theme park on N consecutive days.
+The number of visitors on the i-th day is Vi A day is record breaking if it satisfies both conditions:
     - The number of visitors on the day is strictly larger than the number of visitors on each of the previous days.
     - Either it is the last day, or the number of visitors on the day is strictly larger than the
 number of visitors on the following day.
@@ -21,8 +22,8 @@ Intuition: If we can optimise step (1), then we can optimise our overall solutio
 For step (1): We need to check if a[i] > { a[i-l], a[i-2),..., a[O] }, which is same as a[i] > max(a[i-l], a[i-2],...,a[0])
 
 For this, we will keep a variable mx, which will store the maximum value till a[i]. Then we just need to check,
-            a[i] > mx
-            a[i] > a[i+1], {if i+l < n}
+a[i] > mx
+a[i] > a[i+1], {if i+l < n}
 and update mx, mx = max(mx, a[i])
 
 So step 1 time complexity reduces to O(1) .
@@ -43,7 +44,6 @@ a[i] > { a[i-l], a[i-2),..., a[O] } cuz, its being updated at each itration wher
 #include <iostream>
 using namespace std;
 
-// int maxTill_I(int arr[], int n);
 void recordBreaking(int arr[], int n);
 
 int main()
@@ -51,9 +51,7 @@ int main()
     int n;
     cout << "Enter size of array: ";
     cin >> n;
-
     int arr[n];
-
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
@@ -66,7 +64,6 @@ int main()
     }
 
     recordBreaking(arr, n);
-
     return 0;
 }
 
