@@ -1,7 +1,8 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
-void binSort(int *arr, int n);
+void selectionSort(int *arr, int n);
 void printArr(int *arr, int n);
 void swap(int *a, int *b);
 
@@ -14,27 +15,30 @@ int main()
 
     int arr[n];
 
+    cout << "Enter the elements of the array: " << endl;
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
 
-    binSort(arr, n);
+    selectionSort(arr, n);
 
     return 0;
 }
 
-void binSort(int arr[], int n)
+void selectionSort(int *arr, int n)
 {
     for (int i = 0; i < n - 1; i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        int min = i;
+        for (int j = i; j < n; j++)
         {
-            if (arr[j] > arr[j + 1])
+            if (arr[j] < arr[min])
             {
-                swap(&arr[j], &arr[j + 1]);
+                min = j;
             }
         }
+        swap(arr[i], arr[min]);
     }
 
     printArr(arr, n);
@@ -42,8 +46,6 @@ void binSort(int arr[], int n)
 
 void printArr(int arr[], int n)
 {
-
-    cout << "Sorted array: " << endl;
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";

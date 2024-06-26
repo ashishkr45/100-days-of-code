@@ -1,7 +1,8 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
-void binSort(int *arr, int n);
+void insertionSort(int *arr, int n);
 void printArr(int *arr, int n);
 void swap(int *a, int *b);
 
@@ -14,29 +15,31 @@ int main()
 
     int arr[n];
 
+    cout << "Enter the elements of the array: " << endl;
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
 
-    binSort(arr, n);
+    insertionSort(arr, n);
 
     return 0;
 }
 
-void binSort(int arr[], int n)
+void insertionSort(int *arr, int n)
 {
-    for (int i = 0; i < n - 1; i++)
+    /*tracking unsorted array*/
+    for (int i = 1; i < n; i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        int current = arr[i];
+        int previous = i - 1;
+
+        while (previous >= 0 && arr[previous] > current)
         {
-            if (arr[j] > arr[j + 1])
-            {
-                swap(&arr[j], &arr[j + 1]);
-            }
+            swap(arr[previous], arr[previous + 1]);
+            previous--;
         }
     }
-
     printArr(arr, n);
 }
 
