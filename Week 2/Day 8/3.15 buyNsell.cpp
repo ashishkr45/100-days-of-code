@@ -19,23 +19,25 @@ void maxProfit(int *prices, int n);
 
 int main()
 {
-    int days;
-    cout << "Enter number of Days: ";
+    // int days;
+    // cout << "Enter number of Days: ";
+    // cin >> days;
 
-    int prices[days];
+    int prices[6] = {7, 1, 5, 3, 6, 4};
+    int days = sizeof(prices) / sizeof(int);
 
-    cout << "Enter the price of the stock for eachday: ";
-    for (int i = 0; i < days; i++)
-    {
-        cin >> prices[i];
-    }
+    // cout << "Enter the price of the stock for eachday: " << endl;
+    // for (int i = 0; i < days; i++)
+    // {
+    //     cin >> prices[i];
+    // }
 
     maxProfit(prices, days);
 
     return 0;
 }
 
-void maxPrices(int *prices, int n)
+void maxProfit(int *prices, int n)
 {
     int bestBuy[1000000];
     bestBuy[0] = INT_MAX;
@@ -44,6 +46,7 @@ void maxPrices(int *prices, int n)
     {
         bestBuy[i] = min(bestBuy[i - 1], prices[i - 1]);
     }
+
     int maxProfit = 0;
     for (int i = 0; i < n; i++)
     {
