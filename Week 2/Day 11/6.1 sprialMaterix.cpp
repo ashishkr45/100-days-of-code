@@ -1,15 +1,12 @@
 #include <iostream>
 using namespace std;
 
-void sprialMatrix(int matrix[][4], int n, int m);
-// we always have to pass some value for the size.
-
 int main()
 {
     int n, m;
     cout << "Enter rows: ";
     cin >> n;
-    cout << "Enter column: ";
+    cout << "Enter columns: ";
     cin >> m;
 
     cout << "Enter the elements: " << endl;
@@ -20,48 +17,48 @@ int main()
     {
         for (int j = 0; j < m; j++)
         {
-            cout << matrix[i][j];
+            cin >> matrix[i][j];
         }
     }
 
-    sprialMatrix(matrix, n, m);
-
-    return 0;
-}
-
-void sprialMatrix(int *matrix, int n, int m)
-{
     int sRow = 0, sCol = 0, eRow = n - 1, eCol = m - 1;
 
-    // top
-    for (int j = sCol; j <= eCol; j++)
+    while (sRow <= eRow && sCol <= eCol)
     {
-        cout << matrix[sRow][j];
-    }
-
-    // right
-    for (int i = sRow + 1; i <= eRow; i++)
-    {
-        cout << matrix[i][eCol];
-    }
-
-    // bottom
-    for (int j = eCol - 1; j >= sCol; j)
-        --
+        // top
+        for (int j = sCol; j <= eCol; j++)
         {
-            cout << matrix[eRow][j];
+            cout << matrix[sRow][j] << " ";
+        }
+        sRow++; // Move to the next row
+
+        // right
+        for (int i = sRow; i <= eRow; i++) // Corrected loop condition
+        {
+            cout << matrix[i][eCol] << " "; // Added space for readability
+        }
+        eCol--; // Move to the previous column
+
+        if (sRow <= eRow) // Check if there are remaining rows
+        {
+            // bottom
+            for (int j = eCol; j >= sCol; j--) // Corrected loop condition
+            {
+                cout << matrix[eRow][j] << " "; // Added space for readability
+            }
+            eRow--; // Move to the previous row
         }
 
-    // left
-    for (int i = eRow - 1; i >= sRow + 1; i--)
-    {
-        cout << matrix[i][sCol];
+        if (sCol <= eCol) // Check if there are remaining columns
+        {
+            // left
+            for (int i = eRow; i >= sRow; i--) // Corrected loop condition
+            {
+                cout << matrix[i][sCol] << " "; // Added space for readability
+            }
+            sCol++; // Move to the next column
+        }
     }
 
-    sRow++;
-    sCol++;
-    eRow--;
-    eCol--;
-
-    return;
+    return 0;
 }
