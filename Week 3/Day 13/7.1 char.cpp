@@ -9,7 +9,8 @@ what we can store,
     '0' - '9'
 
 There all the char whixh we are using, all gets converted in bits(0 and 1) and
-that encoding through which it's converted is caller ASCII(American Standrad Code for Information Interchange)
+that encoding through which it's converted is caller
+    ASCII(American Standrad Code for Information Interchange)
     ASCII is a 7 bit char stage where in total 128 char are there
 
 */
