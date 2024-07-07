@@ -69,12 +69,13 @@ void effPairSum(int n, vector<int> vec, int sum)
         int currentSum = vec[st] + vec[ed];
 
         if (currentSum < sum)
-        {
-            st++; // Move the start index forward
-            /*cuz, it's sorted in assending and to the right
-            we'll be having bigger elemnts and since, currentSum
-            is smaller that's why we're moving to the right*/
-        }
+            4
+            {
+                st++; // Move the start index forward
+                /*cuz, it's sorted in assending and to the right
+                we'll be having bigger elemnts and since, currentSum
+                is smaller that's why we're moving to the right*/
+            }
         else if (currentSum > sum)
         {
             ed--; // Move the end index backward
