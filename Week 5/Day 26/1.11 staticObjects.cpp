@@ -23,8 +23,7 @@ int main()
     {
         static Check ch1;
         // Check c1;
-        /*is w
-        e didn't used the static keyword the object should be deleted here itself*/
+        /*is we didn't used the static keyword the object should be deleted here itself*/
     }
 
     cout << "Program ending..\n";
