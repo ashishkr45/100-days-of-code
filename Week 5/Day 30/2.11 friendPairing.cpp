@@ -9,7 +9,9 @@ recurance relation for this'll be:
 for example:
     let say ther are 3: A B C
         i) A can be with himself
-        ii) A can be with
+        ii) A can be in a pair: here A can be paired with AB, AC
+            there were 3 members and a single guy can be paired in two ways (n-1)
+            thats why (n-1) * (n-2)
 */
 
 #include <iostream>
@@ -17,8 +19,20 @@ using namespace std;
 
 int pairing(int n)
 {
-    if (n == 0 || n == 1)
-        return 1;
+    if (n == 2 || n == 1)
+        return n;
 
     return pairing(n - 1) + ((n - 1) * pairing(n - 2));
+}
+
+int main()
+{
+
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    cout << "Total pairs: " << pairing(n) << endl;
+
+    return 0;
 }
