@@ -11,15 +11,16 @@ void deduplication(string str, string ans, int i, int flag[26])
     }
 
     int idx = (int)(str[i] - 'a');
+    // finding the index of the element
 
     if (flag[idx])
     {
         deduplication(str, ans, i + 1, flag);
     }
-    else
+    else // initially the control will come here cuz, flag is false by default
     {
-        flag[idx] = true;
-        deduplication(str, ans + str[i], i + 1, flag);
+        flag[idx] = true;                              // marking the current element
+        deduplication(str, ans + str[i], i + 1, flag); // adding the current elemet to the answer
     }
 }
 

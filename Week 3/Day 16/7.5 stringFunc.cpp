@@ -23,10 +23,10 @@ int main()
 
     /*CHecking String member functions*/
 
-    // if that element is present
+    // this'll tell which element is present at that idx
     cout << str.at(5) << endl;
 
-    // if that element is not present
+    // this'll tell which element is present at that idx
     cout << str.at(3) << endl;
 
     // making substrings,
