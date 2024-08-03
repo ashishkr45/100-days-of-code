@@ -61,27 +61,30 @@ bool isSafe(vector<vector<char>> board, int row, int col)
     return true;
 }
 
-void nQueen(vector<vector<char>> board, int row)
+int nQueen(vector<vector<char>> board, int row)
 {
     int n = board.size();
 
     if (row == n)
     {
         printVec(board);
-        return;
+        return 1;
     }
 
+    int count = 0;
     for (int j = 0; j < n; j++)
     {
         if (isSafe(board, row, j))
         {
             board[row][j] = 'Q';
-            nQueen(board, row + 1);
+            count += nQueen(board, row + 1);
             board[row][j] = '.';
         }
     }
     /*ones we've itrated over every place in the column and found each place unsafe
     the by dafault the function will return to the previous stack level*/
+
+    return count;
 }
 
 int main()
@@ -101,7 +104,8 @@ int main()
         }
         board.push_back(row);
     }
-    nQueen(board, 0);
+    int count = nQueen(board, 0);
+    cout << "Count: " << count << endl;
 
     return 0;
 }
