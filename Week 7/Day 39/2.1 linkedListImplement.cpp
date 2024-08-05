@@ -19,7 +19,9 @@ public:
         cout << "Destructor of Node for data: " << data << endl;
         if (next != NULL)
         {
-            delete next;
+            /*here we're not deleating the var. next
+             we're the deleating the value where next is pointing*/
+            delete next; // its is a pointer
             next = NULL;
         }
     }
