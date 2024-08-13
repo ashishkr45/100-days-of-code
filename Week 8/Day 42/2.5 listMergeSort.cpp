@@ -107,35 +107,25 @@ Node *splitMid(Node *head)
 // Function to merge two sorted linked lists
 Node *merge(Node *leftHead, Node *rightHead)
 {
-    List ans; // Creating a new list for the merged result
+    Node *ans = NULL; // Head of the merged list
 
-    Node *i = leftHead;
-    Node *j = rightHead;
+    if (leftHead == NULL)
+        return rightHead;
+    if (rightHead == NULL)
+        return leftHead;
 
-    while (i != NULL && j != NULL)
+    // Compare data and merge nodes accordingly
+    if (leftHead->data <= rightHead->data)
     {
-        if (i->data <= j->data)
-        {
-            ans.push_back(i->data); // Insert i's data into the new list
-            i = i->next;
-        }
-        else
-        {
-            ans.push_back(j->data); // Insert j's data into the new list
-            j = j->next;
-        }
+        ans = leftHead;
+        ans->next = merge(leftHead->next, rightHead);
     }
-    while (i != NULL)
+    else
     {
-        ans.push_back(i->data); // Insert remaining elements from i
-        i = i->next;
+        ans = rightHead;
+        ans->next = merge(leftHead, rightHead->next);
     }
-    while (j != NULL)
-    {
-        ans.push_back(j->data); // Insert remaining elements from j
-        j = j->next;
-    }
-    return ans.head; // Return the head of the merged list
+    return ans;
 }
 
 // Function to sort the linked list using merge sort

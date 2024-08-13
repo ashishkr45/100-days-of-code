@@ -110,6 +110,8 @@ Node *mergeSort(Node *head)
     // return merge(left, right); // Merge the sorted left and right parts
     printLL(left);
     printLL(right);
+
+    return nullptr;
 }
 
 int main()
