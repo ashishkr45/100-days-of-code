@@ -28,7 +28,7 @@ void assSort(int arr[], int n)
     {
         for (int j = i + 1; j < n; j++)
         {
-            if (arr[i] > arr[j])
+            if (arr[i] < arr[j])
             {
                 int temp = arr[i];
                 arr[i] = arr[j];
@@ -39,6 +39,6 @@ void assSort(int arr[], int n)
     cout << "Sorted in Assending Order: " << endl;
     for (int i = 0; i < n; i++)
     {
-        cout << arr[i];
+        cout << arr[i] << " ";
     }
 }
