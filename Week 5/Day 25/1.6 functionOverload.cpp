@@ -16,6 +16,7 @@ public:
         cout << n << " ";
     }
 
+
     void print(string input)
     {
         for (int i = 0; i < (int)input.length(); i++)
