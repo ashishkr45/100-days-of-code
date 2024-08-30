@@ -28,9 +28,9 @@ public:
 
 int main()
 {
-    Overload over1;
-    over1.print(15);
+    Overload over;
+    over.print(15);
     cout << endl;
-    over1.print("Input");
+    over.print("Input");
     return 0;
 }
