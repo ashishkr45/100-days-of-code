@@ -61,7 +61,6 @@ public:
     {
         if (Empty())
         {
-            cout << "Queue is empty!\n";
             return;
         }
 
@@ -95,15 +94,9 @@ int main()
     q.push(48);
     q.push(88);
 
-    cout << "Without poping" << endl;
-    while (!q.Empty())
-    {
-        cout << q.front() << " ";
-        q.pop();
-    }
     q.pop();
 
-    cout << "With poping" << endl;
+    cout << "Without poping" << endl;
     while (!q.Empty())
     {
         cout << q.front() << " ";
