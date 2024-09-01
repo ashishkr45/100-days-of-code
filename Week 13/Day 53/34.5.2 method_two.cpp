@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stack>
+
 using namespace std;
 
 class Queue
@@ -9,20 +10,20 @@ private:
     stack<int> s2;
 
 public:
-    void push(int val) // O(n) will be it's time complexity
+    void push(int val)
     {
-        /*1. transfering the elem of s1 to s2*/
+        s1.push(val);
+    }
+
+    void pop()
+    {
+        /*moving the elem's to the other stack*/
         while (!s1.empty())
         {
             s2.push(s1.top());
             s1.pop();
         }
-
-        /*2. inserting the data at the end of the stack*/
-        s1.push(val);
-
-        /*3. again pushing the data of the s1 back to s1 from the s2*/
-        /*so that the new elem is at the bottonm of the stack so, it follows the FIFO structure*/
+        s2.pop();
 
         while (!s2.empty())
         {
@@ -31,17 +32,24 @@ public:
         }
     }
 
-    void pop() // O(1)
+    int front()
     {
-        s1.pop();
+        while (!s1.empty())
+        {
+            s2.push(s1.top());
+            s1.pop();
+        }
+
+        return s2.top();
+
+        while (!s2.empty())
+        {
+            s1.push(s2.top());
+            s2.pop();
+        }
     }
 
-    int front() // O(1)
-    {
-        return s1.top();
-    }
-
-    bool empty() // O(1)
+    bool empty()
     {
         return s1.empty();
     }
