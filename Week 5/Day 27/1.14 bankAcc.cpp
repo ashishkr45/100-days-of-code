@@ -1,11 +1,12 @@
 #include <iostream>
+#include <
 using namespace std;
 
 class bankAcc
 {
 private:
     int accNumber;
-    float balance;
+    float balance = 50.00;
 
 public:
     bankAcc(int accNo, float balance)
@@ -41,7 +42,7 @@ public:
 int main()
 {
 
-    bankAcc acc1(45943, 1500);
+    bankAcc acc1(45943, 50);
 
     acc1.deposit(500.69);
     acc1.getBalance();

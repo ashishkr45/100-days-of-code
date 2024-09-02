@@ -49,7 +49,7 @@ public:
 
 int main()
 {
-    Queue q;
+    Queue q; // creation of the objecte
     q.push(1);
     q.push(2);
     q.push(3);
