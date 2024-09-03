@@ -114,6 +114,37 @@ public:
         /*now joining the connection the node which is left of insertion-node */
         temp->next = newNode;
     }
+
+    void insert(string val, int pos)
+    {
+        Node *newNode = new Node(val);
+
+        if (pos == 1)
+        {
+            newNode->next = head;
+            head = newNode;
+
+            if (tail == NULL)
+            {
+                tail = newNode;
+            }
+            return;
+        }
+
+        Node *temp = head;
+        for (int i = 1; i < pos - 1; i++)
+        {
+            temp = temp->next;
+        }
+
+        newNode->next = temp->next;
+        temp->next = newNode;
+
+        if (newNode->next == NULL)
+        {
+            tail = newNode;
+        }
+    }
 };
 
 int main()
