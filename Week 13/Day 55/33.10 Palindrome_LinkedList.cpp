@@ -59,7 +59,9 @@ public:
 int main()
 {
     // Creating a simple linked list: 1 -> 2 -> NULL
-    ListNode *node4 = new ListNode(2);        // 2
+    ListNode *node4 = new ListNode(45); // 2
+
+    ListNode *node4 = new ListNode(45);       // 2
     ListNode *node1 = new ListNode(1, node4); // 1
 
     Solution s;
