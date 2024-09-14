@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+0000000 #include<iostream> using namespace std;
 
 class Node
 {
