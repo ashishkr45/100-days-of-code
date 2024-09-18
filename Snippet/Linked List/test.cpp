@@ -1,16 +1,34 @@
 #include <iostream>
+#include <string>
 #include <vector>
 using namespace std;
 
 int main()
 {
-    vector<int> vec;
-    for (int i = 0; i < 5; i++)
+    string str;
+    cin >> str;
+
+    int itr = 0;
+    vector<char> finals;
+
+    vector<bool> check(256, false);
+
+    for (int i = 0; i < str.size(); i++)
     {
-        cin >> vec[i];
+        if (!check[str[i]])
+        {
+            finals.push_back(str[i]);
+        }
+        else
+        {
+            check[str[i] - '0'] = true;
+        }
     }
-    for (int i = 0; i < 5; i++)
+
+    for (int i = 0; i < finals.size(); i++)
     {
-        cout << vec[i];
+        cout << finals[i];
     }
+
+    return 0;
 }

@@ -71,25 +71,6 @@ void printList(Node *head)
 
 int main()
 {
-    // Node *head = new Node(10);
-    // Node *temp1 = new Node(30);
-    // Node *temp2 = new Node(30);
-    // Node *temp3 = new Node(20);
-    // Node *temp4 = new Node(20);
-    // Node *temp5 = new Node(10);
-    // Node *temp6 = new Node(30);
-    // Node *temp7 = new Node(10);
-    // Node *temp8 = new Node(20);
-
-    // head->next = temp1;
-    // temp1->next = temp2;
-    // temp2->next = temp3;
-    // temp3->next = temp4;
-    // temp4->next = temp5;
-    // temp5->next = temp6;
-    // temp6->next = temp7;
-    // temp7->next = temp8;
-
     Node *head = NULL;
 
     push_back(head, 10);
