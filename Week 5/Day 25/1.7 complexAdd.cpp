@@ -36,6 +36,7 @@ int main()
     cout << "First no: ";
     c1.showNo();
     cout << endl;
+
     cout << "Second no: ";
     c2.showNo();
     cout << endl;
