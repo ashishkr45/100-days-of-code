@@ -20,7 +20,6 @@ public:
             cout << "Stack is Empty\n";
             return;
         }
-
         vec.pop_back();
     }
 
