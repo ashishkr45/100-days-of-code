@@ -1,33 +1,36 @@
 #include <iostream>
 #include <vector>
 #include <climits>
+#include <algorithm>
+#include <cmath>
 
 using namespace std;
 
-void makePair(vector<int> a, vector<int> b)
+void makePair(const vector<int> &a, const vector<int> &b)
 {
-    int diff = 0;
-    for (int i = 0; i < a.size(); i++)
+    sort(a.begin(), a.end());
+    sort(b.begin(), b.end());
+    int diff = INT_MAX;
+    for (int i = 0; i < (int)a.size(); i++)
     {
         int CurrDiff = 0;
-        for (int j = 0; j < a.size(); j++)
+        for (int j = 0; j < (int)b.size(); j++)
         {
-            int diff_the_2nd = abs(a[i] - b[i]);
+            int diff_the_2nd = abs(a[i] - b[j]);
             CurrDiff += diff_the_2nd;
         }
-        if (CurrDiff < diff)
+        if (diff > CurrDiff)
         {
             diff = CurrDiff;
         }
     }
-
     cout << diff;
 }
 
 int main()
 {
-    vector<int> a = {1, 2, 3};
-    vector<int> b = {2, 1, 3};
+    vector<int> a = {1, 5, 1};
+    vector<int> b = {5, 5, 5};
 
     makePair(a, b);
 
