@@ -30,7 +30,7 @@ int maxPorfit(vector<pair<int, int>> pairs)
         jobs.emplace_back(i, pairs[i].first, pairs[i].second);
     }
 
-    sort(jobs.begin(), jobs.end(), [](Job &a, Job &b) // lambda function
+    sort(jobs.begin(), jobs.end(), [](Job &a, Job &b) //! lambda function
          { return a.profit > b.profit; });            // decending order based on the profit;
 
     cout << "Selection Job: " << jobs[0].idx << endl;
