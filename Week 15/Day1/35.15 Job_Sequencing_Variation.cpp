@@ -17,7 +17,7 @@ struct Job
     }
 };
 
-int maxPorfit(vector<pair<int, int>> pairs)
+int maxPorfit(vector<pair<int, int>> pairs) // finding the porfitable gigs
 {
     vector<Job> jobs; // vector of objects
     for (int i = 0; i < (int)pairs.size(); i++)
