@@ -17,24 +17,19 @@ struct Job
     }
 };
 
-bool compair(pair<int, int> p1, pair<int, int> p2)
-{
-    return p1.second > p2.second;
-}
-
 int maxPorfit(vector<pair<int, int>> pairs)
 {
-    vector<Job> jobs;
+    vector<Job> jobs; // vector of objects
     for (int i = 0; i < (int)pairs.size(); i++)
     {
-        jobs.emplace_back(i, pairs[i].first, pairs[i].second);
+        jobs.emplace_back(i, pairs[i].first, pairs[i].second); // this'll directly feed the values to the constructor
     }
 
     sort(jobs.begin(), jobs.end(), [](Job &a, Job &b) //! lambda function
          { return a.profit > b.profit; });            // decending order based on the profit;
 
     cout << "Selection Job: " << jobs[0].idx << endl;
-    int profit = jobs[0].profit;
+    int profit = jobs[0].profit; // selecting the 0th cuz, it'll be most profitable due to sorting
     int safeDeadline = 2;
 
     for (int i = 0; i < (int)jobs.size(); i++)
