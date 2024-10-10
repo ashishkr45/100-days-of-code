@@ -135,7 +135,6 @@ public:
                 }
             }
         }
-        cout << endl;
     }
 };
 
