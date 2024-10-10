@@ -97,6 +97,44 @@ public:
         }
         cout << endl;
     }
+
+    void levelOrder_vartion(Node *root)
+    {
+        if (root == NULL)
+        {
+            return;
+        }
+        queue<Node *> q;
+        q.push(root);
+        q.push(NULL);
+
+        while (!q.empty())
+        {
+            Node *curr = q.front();
+            q.pop();
+
+            if (curr == NULL)
+            {
+                cout << endl;
+                if (q.empty())
+                    break;
+                q.push(NULL); // for the lext layer
+            }
+
+            cout << curr->data << " ";
+
+            if (curr->left != NULL)
+            {
+                q.push(curr->left);
+            }
+
+            if (curr->right != NULL)
+            {
+                q.push(curr->right);
+            }
+        }
+        cout << endl;
+    }
 };
 
 int Tree::idx = -1;
