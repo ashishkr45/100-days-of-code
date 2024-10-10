@@ -120,17 +120,19 @@ public:
                     break;
                 q.push(NULL); // for the lext layer
             }
-
-            cout << curr->data << " ";
-
-            if (curr->left != NULL)
+            else
             {
-                q.push(curr->left);
-            }
+                cout << curr->data << " ";
 
-            if (curr->right != NULL)
-            {
-                q.push(curr->right);
+                if (curr->left != NULL)
+                {
+                    q.push(curr->left);
+                }
+
+                if (curr->right != NULL)
+                {
+                    q.push(curr->right);
+                }
             }
         }
         cout << endl;
@@ -162,6 +164,10 @@ int main()
 
     cout << "Level Order: ";
     t.levelOrder(root);
+    cout << endl;
+
+    cout << "Level Order-vartion: " << endl;
+    t.levelOrder_vartion(root);
     cout << endl;
 
     return 0;
