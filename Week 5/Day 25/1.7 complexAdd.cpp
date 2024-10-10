@@ -9,8 +9,8 @@ class Complex
 public:
     Complex(int r, int i)
     {
-        real = r;
-        imag = i;
+        this->real = r;
+        this->imag = i;
     }
 
     void showNo()

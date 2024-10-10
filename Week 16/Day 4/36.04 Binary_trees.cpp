@@ -15,7 +15,7 @@ public:
         left = right = NULL;
     }
 };
-/*this idx will be updating continusily so that we can get the data from the main function*/
+/*idx to track the nodes*/
 static int idx = -1;
 
 void preOrder(Node *root)
