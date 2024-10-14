@@ -53,7 +53,9 @@ void merge(int arr[], int si, int ei, int mid) // time-complixity is O(log n)
 
     while (i <= mid && j <= ei)
     {
-        if (arr[i] < arr[j]) // the smaller ones are added first
+        if (arr[i] <
+
+            arr[j]) // the smaller ones are added first
         {
             // the one which is added only it's pointer is increamented
             ans.push_back(arr[i++]);
