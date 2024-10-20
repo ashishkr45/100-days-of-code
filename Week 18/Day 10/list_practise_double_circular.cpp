@@ -21,7 +21,7 @@ Node* insertBack(Node* head, int num){
 		newNode->next = newNode;
 		newNode->prev = newNode;
 		return head;
-	}else{
+	} else{
 		Node* temp = head;
 		while (temp->next != head)
 		{
@@ -66,7 +66,7 @@ void printNodes(Node* head){
 	do{
 		cout<<temp->data<<" ";
 		temp = temp->next;
-	}while(temp != head);
+	} while(temp != head);
 	cout<<endl;	
 }
 
