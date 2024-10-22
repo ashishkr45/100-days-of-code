@@ -3,8 +3,6 @@
 using namespace std;
 
 void merge(vector<int> nums, int si, int ei, int mid){
-
-
 	vector<int> ans;
 	int i = si, j = mid+1;
 	while (i <= mid && j <= ei)

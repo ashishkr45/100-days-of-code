@@ -94,7 +94,7 @@ Node* delNode(Node* root, int key){
 			return NULL;
 		}
 		if (root->left == NULL || root->right == NULL){ //case 2: 1 children
-			return root->left == NULL ? root->right : root->right;
+			return root->left == NULL ? root->right : root->left;
 		}
 		// case 3: 2 children
 		Node* successor = Successor(root->right);
