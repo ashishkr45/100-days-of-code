@@ -18,7 +18,7 @@ public:
 static int it = -1;
 Node* buildTree(vector<int>& nodes) {
     it++;
-    if (it >= nodes.size() || nodes[it] == -1)
+    if (nodes[it] == -1)
         return NULL;
 
     Node* root = new Node(nodes[it]);
