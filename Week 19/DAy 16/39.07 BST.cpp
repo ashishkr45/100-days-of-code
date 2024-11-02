@@ -93,11 +93,3 @@ int main()
 	inOrder(root);
 	return 0;
 }
-
-int main()
-{
-	vector<int> nodes = {8, 5, 3, 1, 4, 6, 10, 11, 14};
-	Node* root = buildBST(nodes);
-	printInRange(root, 4, 10);
-	return 0;
-}
