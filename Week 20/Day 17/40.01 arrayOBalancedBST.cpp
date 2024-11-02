@@ -25,7 +25,7 @@ Node* insert(Node* root, int value) {
 
 Node* buildBstTree(vector<int> nodes) {
 	Node* root = NULL;
-	for (int i = 0; i < nodes.size(); i++) {
+	for (int i = 0; i <(int) nodes.size(); i++) {
 		root = insert(root, nodes[i]);
 	}
 	return root;
