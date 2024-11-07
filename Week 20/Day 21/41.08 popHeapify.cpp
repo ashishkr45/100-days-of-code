@@ -69,11 +69,12 @@ public:
 
 int main() {
 	Heap heap;
-	heap.push(10);
-	heap.push(20);
-	heap.push(56);
-	heap.push(69);
-	heap.push(30);
+	heap.push(9);
+	heap.push(4);
+	heap.push(8);
+	heap.push(1);
+	heap.push(2);
+	heap.push(5);
 
 	while (!heap.empty()) {
 		cout << "Top: "<< heap.top() << endl; 
