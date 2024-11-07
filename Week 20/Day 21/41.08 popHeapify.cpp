@@ -4,16 +4,15 @@
 using namespace std;
 
 class Heap {
-	vector<int> vec; //complete binary tree
+	vector<int> vec;
 public:
 	void push (int data) {
-		vec.push_back(data); //step: 1
+		vec.push_back(data);
 
-		// step: 2 fixing the heap
 		int childIdx = vec.size() - 1;
 		int parentIdx = (childIdx - 1) / 2;
 
-		while (parentIdx >= 0 && vec[childIdx] > vec[parentIdx]) // to make a min heap we'll just reverse this comparision condiution
+		while (parentIdx >= 0 && vec[childIdx] > vec[parentIdx])
 		{
 			swap(vec[childIdx], vec[parentIdx]);
 			childIdx = parentIdx;
@@ -22,7 +21,7 @@ public:
 	}
 
 	void pop() {
-		//problem for future me
+
 	}
 
 	int top() {
