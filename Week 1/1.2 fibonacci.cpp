@@ -25,6 +25,8 @@ void fib(int n)
     for (int i = 0; i < n; i++)
     {
         print(a1);
+        print(a2);
+        cout<<endl;
         him = a1 + a2;
         a1 = a2;
         a2 = him;
@@ -34,6 +36,6 @@ void fib(int n)
 
 void print(int n)
 {
-    cout << n << endl;
+    cout << n<<" ";
     return;
 }
