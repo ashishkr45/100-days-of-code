@@ -54,7 +54,7 @@ public:
     }
 
     void addEdge(int x, int y) { // Considering an undirected graph
-        if (x > v || y > v || x < 1 || y < 1) {
+        if (x > v || y > v || x < 0 || y < 0) {
             cout << "Invalid Coordinates" << endl;
             return;
         }
@@ -63,7 +63,7 @@ public:
     }
 
     void remEdge(int x, int y) {
-        if (x > v || y > v || x < 1 || y < 1) {
+        if (x > v || y > v || x < 0 || y < 0) {
             cout << "Invalid Coordinates" << endl;
             return;
         }
@@ -107,9 +107,9 @@ public:
         cout << endl;
     }
 
-	void dfs(int start) {
+	//// void dfs(int start) {
         
-	}
+	//// }
 };
 
 int main() {

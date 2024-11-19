@@ -35,6 +35,7 @@ public:
 		vector<bool> visited(v, false);
 		q.push(0);
 		visited[0] = 1;
+		cout<<"BFS sequence: ";
 
 		while (q.size() > 0) {
 			int u = q.front(); //current vertex
@@ -66,6 +67,7 @@ public:
 	}
 
 	void DFS() {
+		cout<<"DFS sequence: ";
 		vector<bool> visited(7, 0);
 		dfsHelper(0, visited);
 	}
