@@ -107,9 +107,19 @@ public:
         cout << endl;
     }
 
-	//// void dfs(int start) {
+	// void dfs(int start) {
         
-	//// }
+	// }
+
+    void warshellAlgo() {
+        for(int i = 0; i < v; i++) {
+            for(int j = 0; j < v; j++) {
+                for(int k = 0; k < v; k++) {
+                    adjMat[i][j] = adjMat[i][j] || (adjMat[i][k] && adjMat[k][j]);
+                }
+            }
+        }
+    }
 };
 
 int main() {
