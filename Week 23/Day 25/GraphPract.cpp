@@ -11,7 +11,7 @@ private:
         cout << start << " ";
         visited[start] = true;
 
-        // for (int i = 1; i <= v; i++) { // Iterate over valid vertices
+        for (int i = 1; i <= v; i++) { // Iterate over valid vertices
             if (ajMat[start][i] && !visited[i]) {
                 DFShelper(i, visited);
             }
